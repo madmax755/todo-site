@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Max Kendall</title>
-    <link href="assets/css/styles.css" rel="stylesheet"></link>
+    <title>Todo List</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="assets/js/script.js" defer></script>
-</head>
 
+</head>
 <body>
     <div class="container">
         <h1>Todo List</h1>
-        <input type="text" id="todoInput" placeholder="Add a new todo...">
-        <button id="addTodo">Add</button>
-        <ul id="todoList"></ul>
+        <div class="todoInputContainer">
+            <input type="text" id="todoInput" placeholder="Enter a new todo">
+            <button id="addTodo">Add</button>
+        </div>
+        <h2>Active Todos</h2>
+        <ul id="activeTodoList"></ul>
+        <h2>Completed Todos</h2>
+        <button id="toggleCompleted">Show/Hide Completed</button>
+        <ul id="completedTodoList" style="display: none;"></ul>
     </div>
 </body>
-
 </html>
