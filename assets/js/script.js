@@ -13,19 +13,20 @@ async function fetchTodos() {
 
 // Add a new todo
 addTodoButton.addEventListener('click', async () => {
-    const todoText = todoInput.value;
-    if (!todoText) return;
+    const todo_title = todoInput.value;
+    if (!todo_title) return;
 
     const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ text: todoText }),
+        body: JSON.stringify({ title: todo_title }),
     });
 
     if (response.ok) {
         const newTodo = await response.json();
+        console.log(newTodo);
         addTodoToList(newTodo);
         todoInput.value = '';
     }
@@ -34,7 +35,7 @@ addTodoButton.addEventListener('click', async () => {
 // Function to add todo to the list
 function addTodoToList(todo) {
     const li = document.createElement('li');
-    li.textContent = todo.text;
+    li.textContent = todo.title;
     todoList.appendChild(li);
 }
 
